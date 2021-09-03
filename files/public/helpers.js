@@ -8,7 +8,7 @@ const createVenueHTML = (name, location, iconSource) => {
 }
 
 const createWeatherHTML = (currentDay) => {
-    console.log(currentDay.sys.country);
+    console.log(currentDay.wind.speed);
     let countryWeather = kelvinToCelcius(currentDay.main.temp);
     let degree = 'C';
 
@@ -18,6 +18,7 @@ const createWeatherHTML = (currentDay) => {
     }
     return `<h2>${weekDays[(new Date()).getDay()]}</h2>
 		<h2>Temperature: ${countryWeather}&deg;${degree}</h2>
+		<h2>Wind speed: ${(currentDay.wind.speed).toFixed(0)} m/s</h2>
 		<h2>Condition: ${currentDay.weather[0].description}</h2>
   	<img src="https://openweathermap.org/img/wn/${currentDay.weather[0].icon}@2x.png">`;
 }
