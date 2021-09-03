@@ -8,14 +8,14 @@ const createVenueHTML = (name, location, iconSource) => {
 }
 
 const createWeatherHTML = (currentDay) => {
-
-    const us = `<h2>${weekDays[(new Date()).getDay()]}</h2>
-		   <h2>Temperature: ${kelvinToFahrenheit(currentDay.main.temp)}&deg;F</h2>;
+    console.log(currentDay.sys.country);
+    const usGb = `<h2>${weekDays[(new Date()).getDay()]}</h2>
+		   <h2>Temperature: ${kelvinToFahrenheit(currentDay.main.temp)}&deg;F</h2>
 		<h2>Condition: ${currentDay.weather[0].description}</h2>
   	<img src="https://openweathermap.org/img/wn/${currentDay.weather[0].icon}@2x.png">`;
 
-    if (currentDay.sys.country === 'US') {
-        return us;
+    if (currentDay.sys.country === 'US' || 'GB') {
+        return usGb;
     }
     return `<h2>${weekDays[(new Date()).getDay()]}</h2>
 		<h2>Temperature: ${kelvinToCelcius(currentDay.main.temp)}&deg;C</h2>
