@@ -1,7 +1,7 @@
 // Foursquare API Info
-const clientId = 'W3MKJVJCADH2JR4ZJSP0LQ1NLCR0J24SRT5FAAG5AT3XLVEX';
-const clientSecret = '\n' +
-    'OVSGWKFD3FGH1402O1N5PENVOURSREJ3GW2CWJNJEOB21JG1';
+
+const clientId = idClnt;
+const clientSecret = secretClnt;
 const url = 'https://api.foursquare.com/v2/venues/explore?near=';
 
 // OpenWeather Info
